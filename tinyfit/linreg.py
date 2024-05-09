@@ -1,3 +1,11 @@
+# tinyfit/linreg.py
+
+"""Provides linear regression methods.
+
+The module contains the following functions:
+
+"""
+
 import numpy as np
 
 class LinearRegression():
