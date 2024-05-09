@@ -1,4 +1,4 @@
-import src.tinyfit.linreg as lr
+import tinyfit.linreg as lr
 import numpy as np
 
 #lreg = lr.LinearRegression(n_features=2, bias=True)
