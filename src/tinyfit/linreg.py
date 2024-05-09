@@ -19,15 +19,19 @@ class LinearRegression():
             pred = x.dot(self.W) + self.b
             diff = pred - y
             square = diff.T.dot(diff)
-            mse = square/self.n_features
+            mse = square/x.shape[0]
             
-            grad_W = x.T.dot(diff)/self.n_features
+            grad_W = x.T.dot(diff)/x.shape[0]
             self.W += -self.lr*grad_W
             if self.bias:
-                grad_b = 2*np.sum(diff,keepdims=True)/self.n_features
+                grad_b = 2*np.sum(diff,keepdims=True)/x.shape[0]
                 self.b += - self.lr*grad_b
                 
-        print(f'{mse=}')
+        print(f'mse= {mse.item():.4f}')
+
+    def predict(self, x):
+        x = x.reshape(-1,self.n_features)
+        return x.dot(self.W) + self.b
 
     def calculate_mse(self, x, y):
         x = x.reshape(-1,self.n_features)
@@ -35,5 +39,5 @@ class LinearRegression():
         pred = x.dot(self.W) + self.b
         diff = pred - y
         square = diff.T.dot(diff)
-        mse = square/self.n_features
+        mse = square/x.shape[0]
         return mse
