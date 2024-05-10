@@ -1,3 +1,5 @@
+![PyPI - License](https://img.shields.io/pypi/l/tinyfit) ![PyPI - Downloads](https://img.shields.io/pypi/dm/tinyfit)
+
 # tinyfit
 A small, light-weight python regression library.
 
